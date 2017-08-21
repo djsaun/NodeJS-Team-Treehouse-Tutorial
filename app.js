@@ -9,9 +9,7 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = http.createServer((request, response) => {
-  response.statusCode = 200;
-  response.setHeader('Content-Type', 'text/plain');
-  response.end('Hello World\n');
+  homeRoute(request, response);
 });
 
 server.listen(port, hostname, () => {
@@ -19,10 +17,21 @@ server.listen(port, hostname, () => {
 });
 
 //2. Handle HTTP route GET / and POST / i.e. Home
+function homeRoute(request, response) {
   //if url == "/" && GET
     //show search
+    if (request.url === '/') {
+      response.statusCode = 200;
+      response.setHeader('Content-Type', 'text/plain');
+      response.write('Header\n');
+      response.write('Search\n');
+      response.end('Footer\n');
+    } 
+
   //if url == "/" && POST
     //redirect to /:username
+}
+
 
 //3. Handle HTTP route GET /:username i.e. /chalkers
   //if url == "/...."
