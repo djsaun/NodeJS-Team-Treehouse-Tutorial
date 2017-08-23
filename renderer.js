@@ -3,7 +3,7 @@ var fs = require("fs");
 function mergeValues(values, content) {
   //Cycle over the keys
   for(let key in values) {
-    //Replace all {{key}} with the value from the values object
+    //Replace all {{key}} with the value from the values objectbut y
     content = content.replace("{{" + key + "}}", values[key]);
   }
   //return merged content
